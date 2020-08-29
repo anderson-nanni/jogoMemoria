@@ -1,4 +1,4 @@
-let cardBoard = document.querySelector('#cardboard')
+const cardBoard = document.querySelector('#cardboard')
 
 const imgs = [
     "angular.svg",
@@ -19,34 +19,49 @@ imgs.forEach(img => {
     </div>`
 })
 
-cardBoard.innerHTML = cardHTML
-cardBoard.innerHTML += cardHTML
+cardBoard.innerHTML = cardHTML + cardHTML;
 
-const cards = document.querySelectorAll('.memory-card')
-let firstCard, secondCard
+const cards = document.querySelectorAll(".memory-card");
+let firstCard, secondCard;
+let lockCards = false;
 
-function flipCard () {
-    this.classList.add('flip')
+function flipCard() {
+    if (lockCards) return false;
+    this.classList.add("flip");
+
     if (!firstCard) {
-        firstCard = this
-
-        return false //para sair da funçao
+        firstCard = this;
+        return false;
     }
 
-    secondCard = this
-    
-    checkForMatch()
+    secondCard = this;
+
+    checkForMatch();
 }
 
-function checkForMatch () {
-    let isMatch = firstCard.dataset.card === secondCard.dataset.card
+function checkForMatch() {
+    let isMatch = firstCard.dataset.card === secondCard.dataset.card;
 
-    !isMatch ? disableCards(): true
+    !isMatch ? unFlipCards() : resetCards(isMatch);
 }
 
-function disableCards () {
-    firstCard.classList.remove('flip')
-    secondCard.classList.remove('flip')
+function unFlipCards() {
+    lockCards = true;
+    setTimeout(() => {
+        firstCard.classList.remove("flip");
+        secondCard.classList.remove("flip");
+
+        resetCards();
+    }, 1000);
 }
 
-cards.forEach(card => card.addEventListener('click', flipCard))
+function resetCards(isMatch = false) {
+    if (isMatch) {
+        firstCard.removeEventListener("click", flipCard);
+        secondCard.removeEventListener("click", flipCard);
+    }
+
+    [firstCard, secondCard, lockCards] = [null, null, false];
+}
+
+cards.forEach(card => card.addEventListener("click", flipCard));
