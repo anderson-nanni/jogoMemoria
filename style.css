@@ -7,23 +7,28 @@
 body {
     height: 100vh;
     display: flex;
-    background: rgb(228, 228, 87);
+    background: #ffffff url('imagens/geometry2.png');
 }
 
 #cardboard {
-    width: 640px;
-    height: 640px;
+    width: 700px;
+    height: 680px;
     margin: auto;
+    /* padding: 0; */
     display: flex;
     flex-wrap: wrap;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
 }
 
 .memory-card {
     width: calc(25% - 10px);
-    height: 33%;
+    height: 25%;
     margin: 5px;
+    padding: 30px 5px 5px 5px;
     transform-style: preserve-3d;
-    transition: 0.3s;
+    transition: 0.2s;
     position: relative;
 }
 
@@ -37,11 +42,13 @@ body {
 
 .front-face,
 .back-face {
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
     padding: 15px;
-    background: #675a10;
+    background: #2e3d49;
     position: absolute;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
 }
 
 .front-face {

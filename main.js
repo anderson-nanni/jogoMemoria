@@ -52,7 +52,7 @@ function unFlipCards() {
         secondCard.classList.remove("flip");
 
         resetCards();
-    }, 1000);
+    }, 500);
 }
 
 function resetCards(isMatch = false) {
