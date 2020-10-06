@@ -3,11 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
     <title>Jogo da memoria</title>
 </head>
 <body>
+    <header>
+        <h1>Jogo da Memória</h1>
+    </header>
+
+    <section class="panel-score">
+        <span>
+            <span id="min">00</span>:<span id="seg">00</span>
+        </span>
+        <div class="restart">
+            <i class="fa fa-repeat"></i>
+        </div>
+    </section>
+    <div>
+
+    </div>
     <div id="cardboard"></div>
-    <script src="main.js"></script>
+    <script src="js/flipCards.js"></script>
 </body>
 </html>
