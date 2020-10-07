@@ -11,6 +11,7 @@ const imgs = [
 
 let cardHTML = ""
 
+
 imgs.forEach(img => {
     cardHTML += 
     `<div class="memory-card" data-card="${img}">
@@ -25,7 +26,7 @@ const cards = document.querySelectorAll(".memory-card");
 let firstCard, secondCard;
 let lockCards = false;
 
-function flipCard() {
+function flipCard() { //this é referencia ao array em que essa funcao esta iterando / cards -> card
     if (lockCards) return false;
     this.classList.add("flip");
 
@@ -33,7 +34,6 @@ function flipCard() {
         firstCard = this;
         return false;
     }
-
     secondCard = this;
 
     checkForMatch();
@@ -41,8 +41,8 @@ function flipCard() {
 
 function checkForMatch() {
     let isMatch = firstCard.dataset.card === secondCard.dataset.card;
-
     !isMatch ? unFlipCards() : resetCards(isMatch);
+
 }
 
 function unFlipCards() {
@@ -55,13 +55,26 @@ function unFlipCards() {
     }, 500);
 }
 
+let qtdMatches = 0;
 function resetCards(isMatch = false) {
     if (isMatch) {
         firstCard.removeEventListener("click", flipCard);
         secondCard.removeEventListener("click", flipCard);
+        qtdMatches++;
     }
-
-    [firstCard, secondCard, lockCards] = [null, null, false];
+    if (qtdMatches !== cards.length/2) {
+        [firstCard, secondCard, lockCards] = [null, null, false];
+    } else {
+        return endGame();
+    }
+    console.log(cards.length)
 }
 
-cards.forEach(card => card.addEventListener("click", flipCard));
+cards.forEach( card => {
+        card.addEventListener("click", flipCard);
+});
+
+
+function endGame () {
+    console.log("acabou")
+}
