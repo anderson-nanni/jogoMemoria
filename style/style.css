@@ -30,9 +30,13 @@ body {
     margin: auto;
 }
 
+#restart {
+    cursor: pointer;
+}
+
 #cardboard {
-    width: 900px;
-    height: 780px;
+    width: 700px;
+    height: 680px;
     margin: auto;
     /* padding: 0; */
     display: flex;
@@ -99,4 +103,5 @@ body {
     border-radius: 10px;
     font-size: 32px;
     padding: 10px;
+    cursor: pointer;
 }

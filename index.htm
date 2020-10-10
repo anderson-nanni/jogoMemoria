@@ -16,13 +16,13 @@
                 <h1>Jogo da Memória</h1>
             </header>
             <span id="timer">
-                <span id="min">00</span>:<span id="seg">00</span>
+                <span id="min">00</span> : <span id="seg">00</span>
             </span>
             <div id="moves">
-                <span id="NumMoves">0</span> Moves
+                <span id="NumMoves"></span> Moves
             </div>
             <div id="restart">
-                <i class="fa fa-repeat"></i>
+                <i class="fa fa-repeat" onclick="restart()"></i>
             </div>
         </section>
         <div id="cardboard"></div>
@@ -32,15 +32,14 @@
         <section>
             <div>
                 <i class="win-icon fa fa-check-circle-o"></i>
-                <h1 class="win-banner">You are a Winner!</h1>
-                <p class="win-summary">You won in
-                    <span class="win-minutes">00</span> minutes,
-                    <span class="win-seconds">00</span> seconds, using
-                    <span class="win-moves">00</span> moves, for
-                    <span class="win-stars">0</span> stars
+                <h1 class="win-banner">Parabéns!</h1>
+                <p class="win-summary">Você venceu em
+                    <span id="win-minutes">00</span> minutos,
+                    <span id="win-seconds">00</span> segundos, Usando
+                    <span id="win-moves">00</span> Movimentos.
                 </p>
-                <span class="win-button">
-                    Play another game!
+                <span class="win-button" onclick="restart()">
+                    jogar Novamente!
                 </span>
             </div>
         </section>
