@@ -6,25 +6,45 @@
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
     <title>Jogo da memoria</title>
 </head>
 <body>
-    <header>
-        <h1>Jogo da Memória</h1>
-    </header>
-
-    <section class="panel-score">
-        <span>
-            <span id="min">00</span>:<span id="seg">00</span>
-        </span>
-        <div class="restart">
-            <i class="fa fa-repeat"></i>
-        </div>
-    </section>
-    <div>
-
+    <div class="container game-board">
+        <section class="panel-score">
+            <header>
+                <h1>Jogo da Memória</h1>
+            </header>
+            <span id="timer">
+                <span id="min">00</span>:<span id="seg">00</span>
+            </span>
+            <div id="moves">
+                <span id="NumMoves">0</span> Moves
+            </div>
+            <div id="restart">
+                <i class="fa fa-repeat"></i>
+            </div>
+        </section>
+        <div id="cardboard"></div>
     </div>
-    <div id="cardboard"></div>
+
+    <div class="container win-dialog">
+        <section>
+            <div>
+                <i class="win-icon fa fa-check-circle-o"></i>
+                <h1 class="win-banner">You are a Winner!</h1>
+                <p class="win-summary">You won in
+                    <span class="win-minutes">00</span> minutes,
+                    <span class="win-seconds">00</span> seconds, using
+                    <span class="win-moves">00</span> moves, for
+                    <span class="win-stars">0</span> stars
+                </p>
+                <span class="win-button">
+                    Play another game!
+                </span>
+            </div>
+        </section>
+    </div>
     <script src="js/flipCards.js"></script>
 </body>
 </html>

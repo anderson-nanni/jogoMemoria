@@ -62,19 +62,21 @@ function resetCards(isMatch = false) {
         secondCard.removeEventListener("click", flipCard);
         qtdMatches++;
     }
-    if (qtdMatches !== cards.length/2) {
+    if (qtdMatches !== imgs.length) {
         [firstCard, secondCard, lockCards] = [null, null, false];
     } else {
         return endGame();
     }
-    console.log(cards.length)
 }
 
 cards.forEach( card => {
         card.addEventListener("click", flipCard);
 });
 
-
+const gameContainer = document.querySelector('div.game-board');
 function endGame () {
-    console.log("acabou")
+    let win = document.querySelector('.win-dialog');
+    gameContainer.setAttribute('style', 'display: none');
+    win.setAttribute('style', 'display: flex');
 }
+// endGame();

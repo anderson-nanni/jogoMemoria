@@ -1,18 +1,38 @@
 * {
-    padding: 0;
-    margin: 0;
     box-sizing: border-box;
 }
 
 body {
     height: 100vh;
+    font-family: 'Indie Flower', cursive;
+    font-size: 20pt;
     display: flex;
     background: #ffffff url('/imagens/geometry2.png');
 }
 
+.game-board {
+    margin:auto;
+}
+.game-board h1,
+.game-board .panel-score {
+    display: flex;
+}
+
+.panel-score {
+    margin-left: 55px;
+}
+
+
+#timer,
+#moves,
+#restart {
+    padding: 0px;
+    margin: auto;
+}
+
 #cardboard {
-    width: 700px;
-    height: 680px;
+    width: 900px;
+    height: 780px;
     margin: auto;
     /* padding: 0; */
     display: flex;
@@ -25,7 +45,7 @@ body {
 .memory-card {
     width: calc(25% - 10px);
     height: 25%;
-    margin: 5px;
+    margin: auto;
     padding: 30px 5px 5px 5px;
     transform-style: preserve-3d;
     transition: 0.2s;
@@ -50,7 +70,33 @@ body {
     border-radius: 10px;
     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
 }
-
 .front-face {
     transform: rotateY(180deg);
+}
+
+
+.win-dialog {
+    display: none;
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}  
+.win-dialog .win-icon {
+    font-size: 144px;
+    color: #02ccba;;
+}
+
+.win-dialog .win-banner {
+    font-size: 48px;
+}  
+.win-dialog .win-summary {
+    font-size: 32px;
+}  
+.win-dialog .win-button {
+    background-color: #02ccba;
+    border: 1px solid #02b3e4;
+    border-radius: 10px;
+    font-size: 32px;
+    padding: 10px;
 }
