@@ -19,14 +19,14 @@ body {
 }
 
 .panel-score {
-    margin-left: 55px;
+    margin: 10px;
 }
 
 
 #timer,
 #moves,
 #restart {
-    padding: 0px;
+    /* padding: 0px; */
     margin: auto;
 }
 
